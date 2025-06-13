@@ -1,0 +1,25 @@
+Check if Redis is Already Running:
+
+netstat -ano | findstr :6379
+
+Kill the Process Using Port 6379
+Find the PID from the above command.
+Kill it with:
+
+taskkill /PID <PID> /F
+
+
+running redis:
+redis-server.exe
+
+try another port if needed:
+edis-server.exe --port 6380
+
+
+
+Instead, use an ASGI server like Daphne or Uvicorn. For example:
+daphne backend.asgi:application
+
+or 
+
+uvicorn backend.asgi:application
